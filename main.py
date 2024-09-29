@@ -15,7 +15,7 @@ apis = [r"https://iv.datura.network/",r"https://invidious.private.coffee/",r"htt
 url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
 version = "1.0"
 
-os.system("chmod 777 ./yukiverify")
+os.system("chmod 777 ./スプラチャージャーverify")
 
 apichannels = []
 apicomments = []

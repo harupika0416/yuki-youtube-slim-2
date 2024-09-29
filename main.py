@@ -200,17 +200,17 @@ def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
     return redirect("/hatupika")
 
 @app.get('/watch', response_class=HTMLResponse)
-def video(v:str,response: Response,request: Request,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
-    if not(check_cokie(yuki)):
+def video(v:str,response: Response,request: Request,スプラチャージャー: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
+    if not(check_cokie(スプラチャージャー)):
         return redirect("/")
     response.set_cookie(key="スプラチャージャー", value="True",max_age=7*24*60*60)
     videoid = v
     t = get_data(videoid)
-    response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
+    response.set_cookie("スプラチャージャー","True",max_age=60 * 60 * 24 * 7)
     return template('video.html', {"request": request,"videoid":videoid,"videourls":t[1],"res":t[0],"description":t[2],"videotitle":t[3],"authorid":t[4],"authoricon":t[6],"author":t[5],"proxy":proxy})
 
 @app.get("/search", response_class=HTMLResponse,)
-def search(q:str,response: Response,request: Request,page:Union[int,None]=1,yuki: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
+def search(q:str,response: Response,request: Request,page:Union[int,None]=1,スプラチャージャー: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
     if not(check_cokie(スプラチャージャー)):
         return redirect("/")
     response.set_cookie("スプラチャージャー","True",max_age=60 * 60 * 24 * 7)
@@ -244,7 +244,7 @@ def set_cokie(q:str):
 def playlist(list:str,response: Response,request: Request,page:Union[int,None]=1,スプラチャージャー: Union[str] = Cookie(None),proxy: Union[str] = Cookie(None)):
     if not(check_cokie(スプラチャージャー)):
         return redirect("/")
-    response.set_cookie("yuki","True",max_age=60 * 60 * 24 * 7)
+    response.set_cookie("スプラチャージャー","True",max_age=60 * 60 * 24 * 7)
     return template("search.html", {"request": request,"results":get_playlist(list,str(page)),"harupika":"","next":f"/playlist?list={list}","proxy":proxy})
 
 @app.get("/info", response_class=HTMLResponse)

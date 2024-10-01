@@ -95,7 +95,7 @@ body a.channel-owner {
 
 div {
   overflow-wrap: break-word;
-  word-break: break-word;
+  word-warp: break-word;
 }
 
 .loading {

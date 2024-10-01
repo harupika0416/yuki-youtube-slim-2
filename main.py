@@ -141,7 +141,7 @@ def get_comments(videoid):
 def get_replies(videoid,key):
     t = json.loads(apicommentsrequest(fr"api/v1/comments/{videoid}?hmac_key={key}&hl=jp&format=html"))["contentHtml"]
 
-def get_level(harupika):
+def get_level(word):
     for i1 in range(1,13):
         with open(f'Level{i1}.txt', 'r', encoding='UTF-8', newline='\n') as f:
             if harupika in [i2.rstrip("\r\n") for i2 in f.readlines()]:

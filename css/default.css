@@ -94,8 +94,8 @@ body a.channel-owner {
 }
 
 div {
-  overflow-wrap: break-harupika;
-  harupika-wrap: break-harupika;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .loading {

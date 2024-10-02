@@ -15,7 +15,7 @@ apis = [r"https://iv.datura.network/",r"https://invidious.private.coffee/",r"htt
 url = requests.get(r'https://raw.githubusercontent.com/mochidukiyukimi/yuki-youtube-instance/main/instance.txt').text.rstrip()
 version = "1.0"
 
-os.system("chmod 777 ./スプラチャージャーverify")
+os.system("chmod 777 ./yukiverify")
 
 apichannels = []
 apicomments = []
@@ -157,7 +157,7 @@ def check_cokie(cookie):
 
 def get_verifycode():
     try:
-        result = subprocess.run(["./スプラチャージャーverify"], encoding='utf-8', stdout=subprocess.PIPE)
+        result = subprocess.run(["./yukiverify"], encoding='utf-8', stdout=subprocess.PIPE)
         hashed_password = result.stdout.strip()
         return hashed_password
     except subprocess.CalledProcessError as e:

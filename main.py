@@ -193,7 +193,7 @@ template = Jinja2Templates(directory='templates').TemplateResponse
 
 @app.get("/", response_class=HTMLResponse)
 def home(response: Response,request: Request,yuki: Union[str] = Cookie(None)):
-    if check_cokie(スプラチャージャー):
+    if check_cokie(yuki):
         response.set_cookie("スプラチャージャー","True",max_age=60 * 60 * 24 * 7)
         return template("home.html",{"request": request})
     print(check_cokie(スプラチャージャー))
